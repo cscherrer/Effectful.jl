@@ -1,7 +1,5 @@
 using Effectful
 
-using CompositionsBase
-
 struct Put <: Operation end
 const put = Put()
 
