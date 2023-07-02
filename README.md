@@ -31,7 +31,7 @@ end
 Semantics are defined in terms of _handlers_. Here's one that stores an internal state:
 ```julia
 mutable struct Stateful{S} <: AbstractHandler
-	state::S
+    state::S
 end
 ```
 
