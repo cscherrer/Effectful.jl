@@ -1,7 +1,10 @@
-name = "Effects"
+name = "Effectful"
 uuid = "f5584ebd-f602-4afe-9d3f-e139a3298ec2"
 authors = ["Chad Scherrer <chad.scherrer@gmail.com> and contributors"]
 version = "1.0.0-DEV"
+
+[deps]
+CompositionsBase = "a33af91c-f02d-484b-be07-31d278c5ca2b"
 
 [compat]
 julia = "1"

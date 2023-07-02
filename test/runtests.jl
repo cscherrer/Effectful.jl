@@ -1,6 +1,6 @@
-using Effects
+using Effectful
 using Test
 
-@testset "Effects.jl" begin
+@testset "Effectful.jl" begin
     # Write your tests here.
 end

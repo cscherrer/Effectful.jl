@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = Effects
+CurrentModule = Effectful
 ```
 
-# Effects
+# Effectful
 
-Documentation for [Effects](https://github.com/cscherrer/Effects.jl).
+Documentation for [Effectful](https://github.com/cscherrer/Effectful.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [Effects]
+Modules = [Effectful]
 ```
