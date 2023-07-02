@@ -46,7 +46,7 @@ function Effectful.runop(h::Stateful, op::Get, val)
 end
 ```
 
-Note that `x` here is an argument provided in the program. In our effectful function `f` this happens to also be called `x`. `val` the return value. When composing handlers, this allows a computed value to be passed through to other handlers or modified along the way.
+Note that `x` here is an argument provided in the program. In our effectful function `f` this happens to also be called `x`. The `val` argument is the return value. This may seem strange, and it's mostly important when composing handlers. In that case, it allows a computed value to be passed through to other handlers or modified along the way.
 
 Now we can run our program:
 ```julia
