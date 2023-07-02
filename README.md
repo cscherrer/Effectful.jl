@@ -109,3 +109,11 @@ For `Operation`s, there's a different method
     end
 end
 ```
+
+## Performance
+
+Type inference does just fine:
+![image](https://github.com/cscherrer/Effectful.jl/assets/1184449/21e6e524-5abe-433b-9a3f-621b7641910b)
+
+And despite all the hoop-jumping, performance seems pretty good:
+![image](https://github.com/cscherrer/Effectful.jl/assets/1184449/1128d959-97da-41e6-bf6a-022686d24203)
