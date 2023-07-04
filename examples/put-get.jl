@@ -31,19 +31,19 @@ end
 
 struct Printer <: AbstractHandler end
 
-function Effectful.runop(h::Printer, op::Operation, val, args...; kwargs...)
-    @show op, args, kwargs, val
+function Effectful.runop(h::Printer, op::Operation, val, args...)
+    @show op, args, val
     return val
 end
 
 
 
-@effectful function f(a)
-    x = get()
-    put(x + a)
+@effectful function f(x)
     y = get()
-    put(2y + a)
+    z = x + y
+    put(z)
     get()
 end
 
+runwith(Stateful(0), f, 3)
 runwith(Printer() ∘ Stateful(0), f, 3)

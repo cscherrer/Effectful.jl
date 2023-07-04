@@ -19,7 +19,7 @@ function _effectful(ast)
         elseif head == :call 
             fun = args[1]
             fun_args = args[2:end]
-            Expr(:call, :(handle($fun)(nothing)), map(f, fun_args)...)
+            Expr(:call, :(handle($fun)), map(f, fun_args)...)
         else
             Expr(head, map(f, args)...)
         end
