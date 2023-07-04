@@ -9,16 +9,19 @@ macro effectful(ex)
 end
 
 function _effectful(ast)
-    leaf(x::LineNumberNode) = x
-    leaf(x) = :(handle($x)(nothing))
+    leaf(x) = x
 
     function branch(f, head, args)
         if head == :(=)
             Expr(:(=), first(args), f(last(args)))
         elseif head == :function
             Expr(:function, first(args), :(handle -> $(f(last(args)))))
+        elseif head == :call 
+            fun = args[1]
+            fun_args = args[2:end]
+            Expr(:call, :(handle($fun)(nothing)), map(f, fun_args)...)
         else
-            Expr(head, f.(args)...)
+            Expr(head, map(f, args)...)
         end
     end
 
